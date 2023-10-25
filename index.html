@@ -5,57 +5,73 @@
     <title>Modeling</title>
     <link rel="stylesheet" href="style.css">
     <style>
-
         .image{
-            background-color: white;
-            height: 50vh;
+            background-color: rgb(236, 221, 221);
+            height: 60vh;
             width: 450px;
             text-align: center;
-            margin-left: 450px;
+            margin-left: 150px;
         }
         .image img{
             padding-top: 7px;
             width: 250px;
-            height:40vh ;
+            height:50vh ;
         }
         .homesec{
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        .ptype{
+            width: 300px;
+            margin-right:15rem ;
         }
         a{
             text-decoration: none;
             color: black;
         }
 
-        a:hover{
+        span:hover{
             color: rgb(245, 184, 194);
         }
-
+       span{
+        color: rgb(83, 85, 85);
+       }
+ 
     </style>
 </head>
 <body>
    <header>
     <div class="logo">
-      <logo>Modala Morena</logo>
+      <logo>Madala Morena</logo>
     </div>
    </header>
    <div class="menu">
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="catalogue.html">Catalogue</a>
         <a href="contact.html">Contacts</a>
     </nav>
    </div>
    <section href="index.html" id="home">
+    <h1 style="text-align:center;font-size:25px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Fashion is my Passion</h1>
     <div class="homesec">
-      <h1>Fashion is my Passion</h1>
+    
       <div class="image">
       <img src="male.jpg">
-      <h2><a href="catalogue.html">Style</a></h2>
+      <h2><a href="catalogue.html">Click <span>Style</span> for my Catalogue</a></h2>
       </div>
+      <div class="ptype">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto error, obcaecati culpa ad laborum amet molestias laudantium placeat ipsam adipisci velit quibusdam similique cum vel suscipit! Nobis dolorum id repellendus!
+      </p>
+      <br>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio quo officia illo qui totam perspiciatis, optio harum accusantium delectus. Ipsum porro quidem et temporibus officiis doloremque quos velit facere illum.
+      </p>
     </div>
+</div>
    </section>
-
 
 </body>
 </html>
