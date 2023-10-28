@@ -15,7 +15,7 @@
         .image img{
             padding-top: 7px;
             width: 300px;
-            height:50vh ;
+            height:auto;
         }
         .homesec{
             display: flex;
@@ -48,6 +48,14 @@
         .logo h1{
             text-align: center;
         }
+        button{
+            margin-top: 13px;
+            border-radius: 5px;
+            background-color: rgb(0, 153, 255);
+        }
+        button a{
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -68,8 +76,8 @@
     <div class="homesec">
     
       <div class="image">
-      <img src="mo_de_stylist_1.jpg">
-      <h2><a href="https://instagram.com/mo_de_stylist?igshid=MzRlODBiNWFlZA==">Click <span>Style</span> for my Instagram</a></h2>
+      <img src="mo_de_stylist_1.jpg"><br>
+      <button><a href="https://instagram.com/mo_de_stylist?igshid=MzRlODBiNWFlZA==">Click Here for my Instagram</a></button>
       </div>
       <div class="ptype">
       <p>
@@ -89,16 +97,16 @@
     <div class="catalogue">
         <h1 style="text-align:center;font-size:25px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">My Catalogue</h1>
         <div class="slide">
-            <img src="madala1.jpg">
-            <img src="madala2.jpg">
-            <img src="madala3.jpg">
-            <img src="madala4.jpg">
-            <img src="madala5.jpg">
-            <img src="madala6.jpg">
-            <img src="mo_de_stylist_2.jpg">
-            <img src="mo_de_stylist_3.jpg">
-            <img src="mo_de_stylist_4.jpg">
-            <img src="mo_de_stylist_5.jpg">
+            <img src="madala1.jpg" onclick="">
+            <img src="madala2.jpg" onclick="">
+            <img src="madala3.jpg" onclick="">
+            <img src="madala4.jpg" onclick="">
+            <img src="madala5.jpg" onclick="">
+            <img src="madala6.jpg" onclick="">
+            <img src="mo_de_stylist_2.jpg" onclick="">
+            <img src="mo_de_stylist_3.jpg" onclick="">
+            <img src="mo_de_stylist_4.jpg" onclick="">
+            <img src="mo_de_stylist_5.jpg" onclick="">
            
     
         </div>
@@ -107,6 +115,41 @@
    </section>
 
 
-   <script src="script.js"></script>
+   <script src="script.js">
+    // Get all the images in the catalog
+const catalogImages = document.querySelectorAll('.catalogue img');
+
+// Get the modal element
+const modal = document.createElement('div');
+modal.className = 'modal';
+document.body.appendChild(modal);
+
+// Create an image element inside the modal
+const modalImage = document.createElement('img');
+modalImage.className = 'modal-content';
+modal.appendChild(modalImage);
+
+// Function to open the modal and display the clicked image
+function openModal(imageSrc) {
+    modal.style.display = 'block';
+    modalImage.src = imageSrc;
+}
+
+// Function to close the modal
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Add click event listeners to each catalog image
+catalogImages.forEach((image) => {
+    image.addEventListener('click', () => {
+        openModal(image.src);
+    });
+});
+
+// Add a click event listener to close the modal when clicking anywhere outside the modal
+modal.addEventListener('click', closeModal);
+
+   </script>
 </body>
 </html>

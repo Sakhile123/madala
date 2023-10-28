@@ -3,7 +3,7 @@ body{
     color: black;
     padding: 0;
     margin: 0;
-    font-size: 20px;9
+    font-size: 20px;
 }
 
 header{
@@ -92,4 +92,77 @@ color: rgb(83, 85, 85);
 }
 .logo h1{
     text-align: center;
+}
+.image {
+    margin-right: 20px;
+}
+
+.image img {
+    width: 300px;
+    height: auto;
+ 
+
+}
+
+@keyframes view {
+    100% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+ptype {
+    width: 300px;
+    margin-right: 2rem;
+}
+
+/* Catalogue section styles */
+.catalogue {
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.catalogue h1 {
+    font-size: 25px;
+}
+
+.slide {
+    display: flexbox;
+    justify-content: space-between ;
+    flex-wrap: wrap;
+}
+
+.slide img {
+    width: 250px;
+    height: 40vh;
+    margin: 10px;
+    cursor: pointer;
+    animation: rotate 25s linear infinite;
+
+}
+
+/* Add hover effect for the images */
+.slide img:hover {
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    .h1 {
+        font-size: 20px;
+    }
+    .homesec {
+        flex-direction: column;
+    }
+    .image {
+        margin: 0;
+    }
+    .ptype {
+        margin: 0;
+        text-align: center;
+    }
+    .slide img {
+        width: 45%;
+    }
 }

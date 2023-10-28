@@ -1,29 +1,99 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modeling</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+  <link rel="stylesheet"  href="styles.css">
+  <style>
+    /* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
-   
+.image-container {
+  width: 30%;
+  margin: 10px;
+  cursor: pointer;
+}
 
-    </style>
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+#modal-content {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+  </style>
 </head>
 <body>
-   <header>
-    <div class="logo">
-      <logo style="text-align: center;">Modala Morena</logo>
+  <div class="gallery">
+    <div class="image-container">
+      <img src="madala1.jpg" alt="madala 1">
     </div>
-   </header>
-   <div class="menu">
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="catalogue.html">Catalogue</a>
-        <a href="contact.html">Contacts</a>
-    </nav>
-   </div>
+    <div class="image-container">
+      <img src="madala2.jpg" alt="madala 2">
+    </div>
+    <div class="image-container">
+      <img src="madala3.jpg" alt="madala 3">
+    </div>
+  </div>
 
-   <script src="script.js"></script>
+  <div id="modal" class="modal">
+    <span class="close" id="close-modal">&times;</span>
+    <img id="modal-content">
+  </div>
+
+  <script src="script.js">
+
+    const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modal-content");
+const imageContainers = document.querySelectorAll(".image-container");
+const closeModal = document.getElementById("close-modal");
+
+imageContainers.forEach((container) => {
+  container.addEventListener("click", () => {
+    modal.style.display = "block";
+    modalContent.src = container.querySelector("img").src;
+  });
+});
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+  </script>
 </body>
 </html>
